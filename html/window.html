@@ -1,25 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>window</title>
+<!--HELPFUL SITES-->
+<!--http://www.dynamicdrive.com/dynamicindex17/tabcontent.htm?flowertabs=0-->
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <title>window</title>
         <!--STYLE SHEETS-->
-        <style type="text/css"> @import url("../moemoea/css/reset.css"); </style>
+        <style type="text/css"> @import url("../css/reset.css"); </style>
+        <style type="text/css"> @import url("../css/window.css"); </style>
         <!--JAVASCRIPT-->
+        <script src="../javascript/window.js"></script>
+
     </head>
 
-	<body>
-		<header style="background-color:blue;" align="right">
-            <button type="button">-></button>
-            <button type="button">X</button>
+    <body>
+        <header>
+            <img id="pin" src="../images/red-round-pushpin_small.png">
         </header>
-        <iframe name="properties" src="http://www.trademe.co.nz" location="1" height="100px"></iframe>
-        <footer style="background-color:blue;">
-            <button type="button">Tab1</button>
-            <button type="button">Tab2</button>
+        <content>
+            <iframe id="white" class="tabcontent" src="white.html">Tab content 1 here</iframe>
+            <iframe id="red" class="tabcontent" src="red.html">Tab content 2 here</iframe>
+            <iframe id="blue" class="tabcontent" src="blue.html">Tab content 3 here</iframe>
+            <iframe id="yellow" class="tabcontent" src="yellow.html">Tab content 4 here</iframe>
+            <iframe id="orange" class="tabcontent" src="orange.html">Tab content 5 here</iframe>
+        </content>
+        <footer>
+            <ul id="windowtabs" class="shadetabs">
+                <li><a href="#" rel="white" class="selected">White</a></li>
+                <li><a href="#" rel="red">Red</a></li>
+                <li><a href="#" rel="blue">Blue</a></li>
+                <li><a href="#" rel="yellow">Yellow</a></li>
+                <li><a href="#" rel="orange">Orange</a></li>
+           </ul>
         </footer>
-	</body>
 
+        <script type="text/javascript">
+            var windows=new managewindowtabs("windowtabs") //enter ID of Tab Container
+            windows.setpersist(true) //toogle persistence of the tabs' state
+            windows.setselectedClassTarget("link") //"link" or "linkparent"
+            windows.init()
+        </script>        
+    </body>
 </html>
